@@ -1,0 +1,177 @@
+{% extends 'base_card.html' %}
+{% load static %}
+
+{% block card_title %}
+    <div id="message" class="alert hidden">ooo</div>
+{% endblock %}
+
+{% block card_content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home/share.css' %}">
+
+    <h3 class="border-bottom blue text-sm">Share with: </h3>
+
+    <br>
+    <form>
+        <div class="share">
+            <div class="input-cont">
+                <label for="email" class="bolder"> email: </label>
+                <div class="">
+                    <input type="text" required="" title="e-mail" name="e-mail" maxlength="150" id="email" autofocus="">
+                    <div class="wrong-email hidden">Type a correct e-mail address !</div>
+                </div>
+            </div>
+            <div class="radio-btn">
+                <label for="edit-choice" class="bolder"> Privileges: </label>
+                <div class="choices">
+                    <div><input id="edit-choice" type="radio" name="edit-choice" value="read"> Read </div><br>
+                    <div><input id="edit-choice" type="radio" name="edit-choice" value="edit"> Read & Edit </div><br>
+                </div>
+            </div>
+            <input id="btn-share" class="btn btn-primary" type="button" value="Share">
+        </div>
+    </form>
+
+    <br><br>
+
+    <h3 class="border-bottom blue sm">{{ chosen_child.name }}'s info is shared with: </h3>
+    <br>
+    <div class="display">
+
+        <div class="list-cont">
+        {% if shared_with_edit %}
+            {% for user in shared_with_edit %}
+                <div class="list-row dropdown">
+                  <div>{{ user.first_name }} {{ user.last_name }} </div><div class="pink read dropdown-toggle" data-toggle="dropdown"> - Read & Edit</div>
+                  <div class="dropdown-content">
+                    <div class="border-bottom-drop dropdown-text">Change to:</div>
+                      <a href="#" class="dropdown-text" id="read-only">Read Only</a>
+                      <div class="border-bottom-drop dropdown-text">- or -</div>
+                      <a href="#" class="dropdown-text" id="delete-read">Delete</a>
+                      <span class="user-pk" id="read-only-user-pk" style="display: none">{{ user.id }}</span>
+                  </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        {% if shared_with %}
+            {% for user in shared_with %}
+                <div class="list-row dropdown">
+                  <div>{{ user.first_name }} {{ user.last_name }} </div><div class="pink read dropdown-toggle" data-toggle="dropdown"> - Read</div>
+                  <div class="dropdown-content">
+                      <div class="border-bottom-drop dropdown-text">Change to:</div>
+                      <a href="#" class="dropdown-text" id="read-edit">Read & Edit</a>
+                      <div class="border-bottom-drop dropdown-text">- or -</div>
+                      <a href="#" class="dropdown-text" id="delete-read-edit">Delete</a>
+                      <span class="user-pk" id="read-edit-user-pk" style="display: none">{{ user.id }}</span>
+                  </div>
+                </div>
+            {% endfor %}
+
+        {% endif %}
+        <div id="register-div">
+            <ul id="register-ul">
+                <li id="li-register"><a id="register" href="{% url 'home' %}"><< Back to Home</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('#btn-share').click(function () {
+                let email = $('#email').val();
+                let editOrRead =  $("input[name='edit-choice']:checked"). val();
+                let wrongEmail = $('.wrong-email');
+                if (validateEmail(email)) {
+                    wrongEmail.addClass('hidden');
+                    let data = {
+                        child_pk: {{ chosen_child.pk }},
+                        email: email,
+                        editOrRead: editOrRead
+                    };
+
+                    $.ajax({
+                        url: '{% url 'share_child_with' %}',
+                        data: data,
+                        dataType: 'json',
+                        success: function (data) {
+                          let message = $('#message');
+                          if (data.success) {
+                              window.location.reload();
+                             $('#email').val('');
+                             $('input[type=radio]').prop('checked',false);
+                          }else{
+                              message.text(data.error);
+                              message.addClass('alert-danger');
+                              message.removeClass('hidden');
+                              setTimeout(function () {
+                                  message.addClass('hidden');
+                              }, 5000);
+                          }
+                        }
+                      });
+                }else{
+                    $('#email').addClass('red-border');
+                    wrongEmail.removeClass('hidden')
+                }
+            });
+            let readOnly = $('#read-only');
+            let readEdit = $('#read-edit');
+            let deleteReadEdit = $('#delete-read-edit');
+            let deleteRead = $('#delete-read');
+
+            readOnly.click(function () {
+                let data = {
+                    'user_pk': $('#read-only-user-pk').text(),
+                    'child_pk': {{ chosen_child.pk }},
+                };
+                sendData(data);
+             });
+            readEdit.click(function () {
+                let data = {
+                    'user_pk': $('#read-edit-user-pk').text(),
+                    'child_pk': {{ chosen_child.pk }},
+                };
+                sendData(data);
+             });
+            deleteReadEdit.click(function () {
+                let data = {
+                    'user_pk': $('#read-edit-user-pk').text(),
+                    'child_pk': {{ chosen_child.pk }},
+                    'delete': 'delete',
+                };
+                sendData(data);
+             });
+            deleteRead.click(function () {
+                let data = {
+                    'user_pk': $('#read-only-user-pk').text(),
+                    'child_pk': {{ chosen_child.pk }},
+                    'delete': 'delete',
+                };
+                sendData(data);
+             });
+        });
+
+        function validateEmail(email) {
+          let regex = /^([a-zA-Z0-9_.+-])+@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+          return regex.test(email);
+        }
+
+        function sendData(data) {
+            $.ajax({
+                url: '{% url 'change_share_privileges' %}',
+                data: data,
+                dataType: 'json',
+                success: function (data) {
+                    if (data.success) {
+                        window.location.reload();
+                    }else {
+                        alert(data.error)
+                    }
+                }
+             });
+        }
+    </script>
+
+{% endblock %}
+

@@ -1,0 +1,27 @@
+.dropdown-menu{
+    height: auto;
+}
+
+.form-container{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.small-container{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h3{
+    width: 170px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}

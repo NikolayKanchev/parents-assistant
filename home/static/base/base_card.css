@@ -1,0 +1,45 @@
+hr {
+    border-top: 1px solid #3494e6;
+    width:70%;
+}
+
+.card{
+    background-color: #FFFFFF;
+    padding:0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius:4px;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+}
+
+.card:hover{
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.3);
+    color:black;
+}
+
+#sizes-cont{
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    height: 100%;
+}
+
+.card_title{
+    display: flex;
+    justify-content: center;
+}
+
+.container-fluid{
+    padding-top: 35px;
+}
+
+.sizes-row{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.sizes-column{
+    width: 60px;
+}

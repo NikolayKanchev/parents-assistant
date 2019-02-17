@@ -1,0 +1,38 @@
+{#{% load get_categories from my_filters %}#}
+{#{% load get_num_items from my_filters %}#}
+{#{% load bootstrap4 %}#}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'home/main-section.css' %}">
+
+<div class="main-section-cont">
+
+    <div class="sections-cont">
+
+        {% for s in chosen_child_sections %}
+            {% include 'others/section.html' %}
+
+            {% if s.name == 'Clothes' %}
+                <div id="small-commercial">
+                    {% include 'home/commercial_section.html' %}
+                </div>
+            {% endif %}
+
+        {% endfor %}
+
+        {% if slug != 'read' %}
+            <div class="section">
+                <div class="white">
+                    <h3>Add new section <a href="{% url 'add_section' pk=chosen_child.pk %}"><img src="{% static '/open-iconic-master/svg/plus.svg' %}" class="icon add-section" alt="share"></a></h3>
+                </div>
+            </div>
+        {% endif %}
+
+    </div>
+
+</div>
+
+<script src="{% static 'js/jquery.nicescroll.js' %}"></script>
+<script type="text/javascript">
+    $(".categories").niceScroll();
+</script>

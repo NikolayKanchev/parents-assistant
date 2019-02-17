@@ -1,0 +1,213 @@
+{% load static %}
+{% include "others/tooltip_links.html" %}
+{% load get_photos from my_filters %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'home/children-info.css' %}">
+
+<div id="children-info-container">
+    <div >
+        <a href="{% url 'shared_with_me' %}" class="btn shared-with-me panel-group">
+            <div id="img-cont-add">Shared with me</div>
+        </a>
+    </div>
+
+    <div class="change-children-cont
+    {% if chosen_child.gender == "BOY" %} boy {% else %} girl {% endif %}
+    ">
+    {% if children %}
+        {% for c in children %}
+
+            {% if c.pk == chosen_child.pk %}
+                <div class="child-container target">
+                    <a id="chosen-child-pick-name" href="#">
+                        <div>
+                            <img id="img-hearts" class="card-img-top" src="{% static 'images/hearts.png' %}" alt="hearts">
+                            <div class="crop-container">
+                                {% if chosen_child_photo.file %}
+                                    <img id='picture' class="card-img-top" src="{{ chosen_child_photo.file.url }}" alt="{{ chosen_child_photo }}'s picture">
+                                {% else %}
+                                    {% if chosen_child.gender == "BOY" %}
+                                        <img id='picture' class="card-img-top" src="{% static 'images/boy.png' %}" alt="{{ chosen_child_photo }}'s picture">
+                                    {% elif chosen_child.gender == "GIRL"%}
+                                        <img id='picture' class="card-img-top" src="{% static 'images/girl.png' %}" alt="{{ chosen_child_photo }}'s picture">
+                                    {% else %}
+                                        <img id='picture' style="padding: 10px" class="card-img-top" src="{% static 'images/Baby.png' %}" alt="{{ chosen_child_photo }}'s picture">
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div id="chosen-child-name">
+                            <br>
+                            <span class="text name">{{ c.name }}</span>
+                        </div>
+
+                    </a>
+                    <span>
+                        {% if not slug or slug == 'edit' %}
+                        <a class="photo-crop-link" href="{% url 'crop-photo' pk=chosen_child_photo.pk %}"><img src="{% static 'images/change_photo.png' %}" class="photo" alt="photo"></a>
+                        <span class="edit-child-details">
+                                <a class="share" href="{% url 'update_share' pk=c.pk %}" data-toggle="tooltip" data-placement="top" title="Share With"><span id="pencil"><img src="{% static '/open-iconic-master/svg/share-boxed.svg' %}" class="icon" alt="share"></span></a>
+                                <a class="pencil" href="{% url 'update_child' pk=c.pk %}" data-toggle="tooltip" data-placement="top" title="Edit {{ c.name }}'s details!"><span id="pencil"><img src="{% static '/open-iconic-master/svg/pencil.svg' %}" class="icon" alt="pencil"></span></a>
+                                <br>
+                        </span>
+                        {% endif %}
+                        <span>
+                            {% if not not_born_yet %}
+                                <span class="info-details age">
+                                    {% if slug and slug == 'read' %}
+                                        <a style="margin-left: 10px"></a>
+                                    {% else %}
+                                        <a id="edit-size-system" href="{% url 'update_size_system' pk=c.pk %}"><span data-toggle="tooltip" data-placement="top" title="Edit size system">{{ chosen_child.size_system }}</span></a>
+                                    {% endif %}
+                                    <span> {{ chosen_child.age.years }} years</span>
+                                    <span>, {{ chosen_child.age.months }} monts</span>
+                                    <span>, {{ chosen_child.age.days }} days</span><br>
+                                </span>
+                                <span class="info-details" >
+                                    <span class="est-size left">Clothes Sizes: </span>
+                                    <span class="est-size"> {{ chosen_child.get_clothes_sizes_str }}</span>
+                                    {% if not slug or slug == 'edit' %}
+                                    <a id="edit-size" href="{% url 'update_sizes' pk=c.pk %}"><span data-toggle="tooltip" data-placement="top" title="Not the right size? Click to edit"> edit size </span></a>
+                                    {% endif %}
+                                    <br>
+                                </span>
+                                <span class="info-details">
+                                    <span class="est-size left">Shoes Sizes: </span>
+                                    <span class="est-size"> {{ chosen_child.get_shoe_sizes_str }}</span><br>
+                                    {% if not slug or slug == 'edit' %}
+                                    <a id="edit-size" href="{% url 'update_shoe_sizes' pk=c.pk %}"><span data-toggle="tooltip" data-placement="right" title="Not the right size? Click to edit"> edit size </span></a>
+                                    {% endif %}
+                                </span>
+                            {% endif %}
+
+                        </span>
+                    </span>
+                </div>
+            {% else %}
+                <a id="not-chosen-child-container" href="{% url 'home' pk=c.pk %}" class="child-container">
+                    <img id="img-hearts" class="card-img-top" src="{% static 'images/hearts.png' %}" alt="hearts">
+                    <div class="crop-container">
+                        {% for photo in c|get_photos %}
+                            {% if photo.file %}
+                                <img id='picture' class="card-img-top" src="{{ photo.file.url }}" alt="{{ photo.file }}'s picture">
+                            {% else %}
+                                {% if c.gender == "BOY" %}
+                                    <img id='picture' class="card-img-top" src="{% static 'images/boy.png' %}" alt="{{ chosen_child_photo }}'s picture">
+                                {% elif c.gender == "GIRL"%}
+                                        <img id='picture' class="card-img-top" src="{% static 'images/girl.png' %}" alt="{{ chosen_child_photo }}'s picture">
+                                {% else %}
+                                    <img id='picture' style="padding: 10px" class="card-img-top" src="{% static 'images/Baby.png' %}" alt="{{ chosen_child_photo }}'s picture">
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="text name">{{ c.name }}</div>
+                </a>
+            {% endif %}
+
+        {% endfor %}
+
+    {% else %}
+{#*******************************************************************************************************#}
+    {% endif %}
+        {% if not shared_child %}
+        <a id="big-add-menu" href="{% url 'add_child' %}" class="btn add-new" data-toggle="dropdown">
+            <div id="img-cont-add"><img id='icon-plus' class="icon" src="{% static 'images/plus.png' %}" alt="add_new">
+            Add Child</div>
+        </a>
+        {% include "others/dropdown_add_child.html" %}
+        {% else %}
+           <div >
+                <a id="big-add-menu" href="{% url 'home' %}" class="btn my-children">
+                    <div id="img-cont-add">My Children</div>
+                </a>
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="small-children-menu">
+        {% if children %}
+            <div id="small-children-info">
+                <img id="img-hearts-small" class="card-img-top" src="{% static 'images/hearts.png' %}" alt="hearts">
+
+                <div class="crop-container">
+                    {% if chosen_child_photo.file %}
+                        <img id='picture-small-drop-down' class="card-img-top" src="{{ chosen_child_photo.file.url }}" alt="{{ chosen_child_photo }}'s picture">
+                    {% else %}
+                        {% if chosen_child.gender == "BOY" %}
+                            <img id='picture-small-drop-down' class="card-img-top" src="{% static 'images/boy.png' %}" alt="{{ chosen_child_photo }}'s picture">
+                        {% elif chosen_child.gender == "GIRL"%}
+                            <img id='picture-small-drop-down' class="card-img-top" src="{% static 'images/girl.png' %}" alt="{{ chosen_child_photo }}'s picture">
+                        {% else %}
+                            <img id='picture-small-drop-down' style="padding: 10px" class="card-img-top" src="{% static 'images/Baby.png' %}" alt="{{ chosen_child_photo }}'s picture">
+                        {% endif %}
+                    {% endif %}
+                </div>
+
+                <a id="child-small-dropdown" class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <span class="caret"><a href="#" ></a></span>
+                </a>
+                {% include "others/dropdown_child.html" %}
+            </div>
+            <div id="children-small-info">
+                <div>
+                    <div class="flex-start">
+                        <span><a id="edit-size-system" href="{% url 'update_size_system' pk=chosen_child.pk %}"><span data-toggle="tooltip" data-placement="top" title="Edit size system">{{ chosen_child.size_system }}</span></a></span>
+                        <div style="margin-right: 5px">{{ chosen_child.name }}</div>
+                        <div class="pink">
+                            {% if not not_born_yet %}
+                                <span> {{ chosen_child.age.years }} years</span>
+                                <span>, {{ chosen_child.age.months }} monts</span>
+                                <span>, {{ chosen_child.age.days }} days</span><br>
+                                <span id="small-children-info-pencil" class="edit-child-details">
+                                    <a href="{% url 'update_child' pk=chosen_child.pk %}" data-toggle="tooltip" data-placement="left" title="Edit {{ chosen_child.name }}'s details!"><span id="pencil"><img src="{% static '/open-iconic-master/svg/pencil.svg' %}" class="icon" alt="pencil"></span></a>
+                                </span>
+                                <a class="share small-share" href="{% url 'update_share' pk=chosen_child.pk %}" data-toggle="tooltip" data-placement="top" title="Share With"><span id="pencil"><img src="{% static '/open-iconic-master/svg/share-boxed.svg' %}" class="icon" alt="share"></span></a>
+                            {% else %}
+                                <span id="small-children-info-pencil-not-born" class="edit-child-detail">
+                                    <a href="{% url 'update_child' pk=chosen_child.pk %}" data-toggle="tooltip" data-placement="left" title="Edit {{ chosen_child.name }}'s details!"><span id="pencil"><img src="{% static '/open-iconic-master/svg/pencil.svg' %}" class="icon" alt="pencil"></span></a>
+                                </span>
+                                <a class="share" style="margin-left: 15px" href="{% url 'update_share' pk=chosen_child.pk %}" data-toggle="tooltip" data-placement="top" title="Share With"><span id="pencil"><img src="{% static '/open-iconic-master/svg/share-boxed.svg' %}" class="icon" alt="share"></span></a>
+                            {% endif %}
+                        </div>
+                    </div>
+                        {% if not not_born_yet %}
+                            <div class="flex-start">
+                                <span class="est-size left">Clothes Sizes: </span>
+                                <span class="pink width"> {{ chosen_child.get_clothes_sizes_str }}</span>
+                                <a id="edit-size" href="{% url 'update_sizes' pk=chosen_child.pk %}"><span data-toggle="tooltip" data-placement="top" title="Not the right size? Click to edit"> edit size </span></a>
+                            </div>
+                            <div class="flex-start">
+                                <span class="est-size left">Shoes sizes: </span>
+                                <span class="pink width"> {{ chosen_child.get_shoe_sizes_str }}</span>
+                                <a id="edit-size" href="{% url 'update_shoe_sizes' pk=chosen_child.pk %}"><span data-toggle="tooltip" data-placement="right" title="Not the right size? Click to edit"> edit size </span></a>
+                            </div>
+                        {% endif %}
+
+                </div>
+
+            </div>
+
+
+        {% else %}
+            <div class="">
+{#            #**************************************************************************************#}
+                {% if not shared_child %}
+                <div >
+                    <a href="#" class="btn add-new panel-group" data-toggle="dropdown">
+                        <div id="img-cont-add"><img id='icon-plus' class="icon" src="{% static 'images/plus.png' %}" alt="add_new">
+                        Add Child</div>
+                    </a>
+                    {% include "others/dropdown_add_child.html" %}
+                </div>
+                {% endif %}
+            </div>
+        {% endif %}
+
+    </div>
+
+
+</div>
+
+<script src="{% static 'js/tooltip.js' %}"></script>
+

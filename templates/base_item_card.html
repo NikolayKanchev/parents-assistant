@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% load crispy_forms_tags %}
+
+{% block title %}Details{% endblock %}
+
+{% block content %}
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'base/base_card.css' %}">
+
+    <div class="container-fluid">
+        <div id="cards" class="row">
+            <div class="col-lg-1 col-md-2 left-container"></div>
+
+            <div id="card-container" class="col-lg-10 col-md-10 col-sm-12 mt-lg-5 mt-md-5 mt-sm-5">
+              <div class="card text-center pt-5 pb-5">
+                <div class="card-body card_title">
+                    <div id="form-container">
+                        <h5 class="card-title">
+                            {% block card_title %}{% endblock %}
+                        </h5>
+
+                        {% block card_content %}
+
+                        {% endblock %}
+
+                    </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-1 col-md-2 col-sm-3"></div>
+
+
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            $('.dp').datetimepicker({
+                format:'YYYY-MM-DD',
+                locale: 'pt-br',
+                maxDate: moment(),
+                useCurrent: false,
+            });
+         });
+        $(function () {
+            $('.dp_due_date').datetimepicker({
+                format:'YYYY-MM-DD',
+                locale: 'pt-br',
+                useCurrent: false,
+            });
+         });
+    </script>
+{% endblock %}

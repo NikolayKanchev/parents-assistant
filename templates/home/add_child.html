@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'login_register/style.css' %}">
+
+     <div class="form-container">
+         <div class="small-container">
+            <h1>Add Child</h1>
+            <form method="post" class="form">
+                <br>
+            {% csrf_token %}
+                <div class="col-lg-12">
+                  {% bootstrap_form form layout='inline'%}
+                    <ul class="form-actions">
+                        <li><p><a id="back" href="{% url 'home' %}"> Back</a></p></li>
+                        <li><input id="submit" type="submit" value="Save" class="primary" /></li>
+                    </ul>
+                </div>
+            </form>
+         </div>
+     </div>
+    <script>
+        $(function () {
+            $('.dp').datetimepicker({
+                format:'YYYY-MM-DD',
+                locale: 'pt-br',
+                maxDate: moment()
+            });
+        });
+    </script>
+{% endblock %}

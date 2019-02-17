@@ -1,0 +1,13 @@
+{% load static %}
+
+{% if s.name not in s.get_default_sections_names %}
+     <div class="section-drop-down">
+          <a class="" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span id="menu-2"><img style="cursor: pointer;" src="{% static '/open-iconic-master/svg/list-rich.svg' %}" class="ico" alt="mwnu-2"></span>
+          </a>
+          <div class="dropdown-menu section-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="{% url 'update_section' pk=s.pk %}" style="color: #2e3450">Change Name</a>
+            <a class="dropdown-item" href="{% url 'delete_section' pk=s.pk %}" style="color: #2e3450">Delete</a>
+          </div>
+    </div>
+{% endif %}

@@ -1,0 +1,80 @@
+{#{% extends 'base_item_card.html' %}#}
+{#{% load static %}#}
+{#{% load bootstrap4 %}#}
+{#{% load crispy_forms_tags %}#}
+
+{#{% block card_title %}#}
+{#    <link rel="stylesheet" type="text/css" href="{% static 'home/css/items.css' %}">#}
+{##}
+{#    <div class="back-cont">#}
+{#        <a class="back-btn" href="{% url 'home' pk=category.section.child.pk %}"><<< Back</a>#}
+{#    </div>#}
+{#    <h2 class="blue"> Items in "{{ category.name }}"</h2>#}
+{#    <h6 class="pink filter-position">#}
+{#        {% if items.first.category.section.name == "Clothes" %}#}
+{#          for sizes:#}
+{#          <a href="{% url 'update_clothing_filter_size_second' pk=size_filter.pk category_pk=items.first.category.pk %}">#}
+{#              <span class="sizes-text" data-toggle="tooltip" data-placement="top" title="Change sizes"> All </span>#}
+{#          </a>#}
+{#        {% elif items.first.category.section.name == "Shoes" %}#}
+{#          for sizes:#}
+{#          <a href="{% url 'update_shoe_filter_size_second' pk=size_filter.pk category_pk=items.first.category.pk %}">#}
+{#              <span class="sizes-text" data-toggle="tooltip" data-placement="top" title="Change sizes"> All </span>#}
+{#          </a>#}
+{#        {% endif %}#}
+{#    </h6>#}
+{#    <hr>#}
+{#{% endblock %}#}
+{##}
+{#{% block card_content %}#}
+{#    <link rel="stylesheet" type="text/css" href="{% static 'home/css/items.css' %}">#}
+{##}
+{#        <div class="items-cont">#}
+{#            {% for i in items %}#}
+{#                <div class="item-card-cont">#}
+{#                    <div class="details-cont">#}
+{#                        <a class="btn details-btn" href="{% url 'update_item_from_all_items' pk=i.pk slug='all_items' %}">Details</a>#}
+{#                    </div>#}
+{#                    <div class="img-container">#}
+{#                        <img class="card-img-top" src="{{ i.picture.url }}" alt="picture">#}
+{#                    </div>#}
+{#                    {% if i.brand %}#}
+{#                        <div class="text-size">#}
+{#                            <span class="blue">Brand: </span><span class="pink"> {{ i.brand }} </span>#}
+{#                        </div>#}
+{#                    {% endif %}#}
+{#                    {% if i.season %}#}
+{#                        <div class="text-size">#}
+{#                            <span class="blue">Season: </span><span class="pink"> {{ i.season }} </span>#}
+{#                        </div>#}
+{#                    {% endif %}#}
+{#                    {% if i.clothing_size or i.sex %}#}
+{#                        <div class="text-size">#}
+{#                        {% if i.clothing_size %}#}
+{#                            <span class="blue">Size: </span><span class="pink"> {{ i.clothing_size }} </span>#}
+{#                            <span class="pink"></span>#}
+{#                            <span class="pink"></span>#}
+{#                        {% endif %}#}
+{#                        {% if i.sex %}#}
+{#                            <span class="blue">Sex: </span><span class="pink"> {{ i.sex }} </span>#}
+{#                        {% endif %}#}
+{#                        </div>#}
+{#                    {% endif %}#}
+{#                    {% if i.shoe_size %}#}
+{#                        <div class="text-size"><span class="blue">Size: </span><span class="pink"> {{ i.shoe_size }} </span></div>#}
+{#                    {% endif %}#}
+{#                    {% if i.condition %}#}
+{#                        <div class="text-size"><span class="blue">Condition: </span><span class="pink"> {{ i.condition }} </span></div>#}
+{#                    {% endif %}#}
+{#                </div>#}
+{#            {% endfor %}#}
+{#            <div class="item-card-cont hidden"></div>#}
+{#            <div class="item-card-cont hidden"></div>#}
+{#            <div class="item-card-cont hidden"></div>#}
+{#            <div class="item-card-cont hidden"></div>#}
+{#            <div class="item-card-cont hidden"></div>#}
+{#            <div class="item-card-cont hidden"></div>#}
+{#            <div class="item-card-cont hidden"></div>#}
+{#        </div>#}
+{##}
+{#{% endblock %}#}

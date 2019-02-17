@@ -1,0 +1,75 @@
+{% extends 'others/dropdown.html' %}
+{% load static %}
+{% load get_photos from my_filters %}
+
+
+{% block dropdown_content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'others/dropdown.css' %}">
+
+    {% for c in children %}
+        {% if not c.pk == chosen_child.pk %}
+
+        <li><a href="{% url 'home' pk=c.pk %}" class="child-container-dropdown">
+            <div id="dropdown-child">
+                <img id="img-hearts-dropdown" class="card-img-top" src="{% static 'images/hearts.png' %}" alt="hearts">
+                <div class="crop-container-dropdown">
+                    {% for photo in c|get_photos %}
+                        {% if photo.file %}
+                            <img id='picture-dropdown' class="card-img-top" src="{{ photo.file.url }}" alt="{{ photo.file }}'s picture">
+                        {% else %}
+                            {% if c.gender == "BOY" %}
+                                <img id='picture-dropdown' class="card-img-top" src="{% static 'images/boy.png' %}" alt="{{ chosen_child_photo }}'s picture">
+                            {% elif c.gender == "GIRL"%}
+                                <img id='picture-dropdown' class="card-img-top" src="{% static 'images/girl.png' %}" alt="{{ chosen_child_photo }}'s picture">
+                            {% else %}
+                                <img id='picture-dropdown' style="padding: 15px" class="card-img-top" src="{% static 'images/Baby.png' %}" alt="{{ chosen_child_photo }}'s picture">
+                            {% endif %}
+
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <span class="text name">{{ c.name }}</span>
+            </div>
+        </a></li>
+
+
+        {% endif %}
+
+    {% endfor %}
+        <li>
+            <a id="toggle-add-child" href="#c" class="btn add-new child-container-dropdown" data-toggle="collapse" data-parent="#accordion">
+                <div id="img-cont-add"><img id='icon-plus' class="icon" src="{% static 'images/plus.png' %}" alt="add_new">
+                Add Child</div>
+            </a>
+            <div id="c" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <table class="table">
+                        <tc>
+                            <tr>
+                                <a href="{% url 'add_child' %}">Baby and Child</a>
+                            </tr>
+                            <hr>
+                            <tr>
+                                <a href="{% url 'add_preemie' %}">Preemie</a>
+                            </tr>
+                            <hr>
+                            <tr>
+                                <a href="{% url 'add_not_born' %}">Not Born Yet</a>
+                            </tr>
+                        </tc>
+                    </table>
+                </div>
+            </div>
+        </li>
+
+
+    <script>
+
+        $(document).on(
+            'click.bs.dropdown.data-api',
+            '[data-toggle="collapse"]',
+            function (e) { e.stopPropagation() }
+        );
+
+    </script>
+{% endblock %}

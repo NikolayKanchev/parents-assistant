@@ -1,0 +1,200 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'manual.css' %}">
+
+
+{#<div class="main-container">#}
+{#    <div id="big-cont" class="big-container">#}
+{##}
+{#        <div id="description" class="small-container">#}
+{#            <p>Lorem ipsum dolor sit amet, elit ante eu nisl, sit euismod consectetuer amet tempor eleifend. Leo ultricies enim proin enim sit, eleifend vitae felis leo ut. Eros cras torquent euismod mi sodales, arcu maecenas placerat dolor.</p>#}
+{##}
+{#        </div>#}
+{##}
+{#        <div id="flow" class="small-container">#}
+{##}
+{#            <div id="first-fluid" class="container-fluid">#}
+{#              <div class="row">#}
+{##}
+{#                  <div class="cards-cont">#}
+{##}
+{#                    <div class="card-cont">#}
+{#                      <div class="card text-center">#}
+{#                        <img class="manual-card-img" src="{% static 'images/manual_1.PNG' %}" alt="Card image cap">#}
+{#                        <div class="card-body" id="card">#}
+{#                            <h5 class="card-title">Add Child</h5>#}
+{#                            <p class="p-text">Add your child choosing between the options.</p>#}
+{#                            <p>Add your child choosing between the options.<span style="visibility: hidden">ooooooooo oooooooo ooooo oooooooo oooooooo</span></p>#}
+{#                        </div>#}
+{#                        <div class="num-container">#}
+{#                            <div class="number">1</div>#}
+{#                        </div>#}
+{#                      </div>#}
+{#                    </div>#}
+{##}
+{#                    <div class="card-cont">#}
+{#                      <div class="card text-center">#}
+{#                        <img class="manual-card-img" src="{% static 'images/manual_2.PNG' %}" alt="Card image cap">#}
+{#                        <div class="card-body" id="card">#}
+{#                            <h5 class="card-title">Add Items</h5>#}
+{#                            <p class="p-text">Add item/s in the categories clothes, shoes, toys or add a category of your own.</p>#}
+{##}
+{#                        </div>#}
+{#                          <div class="num-container">#}
+{#                              <div class="number">2</div>#}
+{#                          </div>#}
+{#                      </div>#}
+{#                    </div>#}
+{##}
+{#                    <div class="card-cont">#}
+{#                      <div class="card text-center">#}
+{#                        <img class="manual-card-img" src="{% static 'images/manual_3.PNG' %}" alt="Card image cap">#}
+{#                        <div class="card-body" id="card">#}
+{#                            <h5 class="card-title">See Overview</h5>#}
+{#                            <p class="p-text">See overview of your child's current wardrobe</p>#}
+{##}
+{#                        </div>#}
+{#                          <div class="num-container">#}
+{#                              <div class="number">3</div>#}
+{#                          </div>#}
+{#                      </div>#}
+{#                    </div>#}
+{##}
+{#                  </div>#}
+
+{#                  <div id="get-started">#}
+{##}
+{#                      <button id="more-usages" type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo">See more usages</button>#}
+{##}
+{#                      {% if not user.is_authenticated %}#}
+{#                          <button id="get-started-input" type="button" class="btn btn-primary">#}
+{#                              <a href="{% url 'login' %}">#}
+{#                                <span id="get-started-text">Get Started</span>#}
+{#                              </a>#}
+{#                          </button>#}
+{#                      {% endif %}#}
+{##}
+{#                  </div>#}
+{##}
+{#                  <div id="demo" class="collapse">#}
+{##}
+{#                      <div class="cards-cont">#}
+{##}
+{#                        <div class="card-cont">#}
+{#                          <div class="card text-center">#}
+{#                            <img class="manual-card-img" src="https://picsum.photos/1900/1080?image=327" alt="Card image cap">#}
+{#                            <div class="card-body" id="card">#}
+{#                                <h5 class="card-title">Title</h5>#}
+{#                                <p class="p-text">Lorem ipsum dolor sit amet, elit ante eu nisl, sit euismod consectetuer</p>#}
+{#                            </div>#}
+{#                              <div class="num-container">#}
+{#                                  <div class="number">4</div>#}
+{#                              </div>#}
+{#                          </div>#}
+{#                        </div>#}
+{##}
+{#                        <div class="card-cont">#}
+{#                          <div class="card text-center">#}
+{#                            <img class="manual-card-img" src="https://picsum.photos/1900/1080?image=327" alt="Card image cap">#}
+{#                            <div class="card-body" id="card">#}
+{#                                <h5 class="card-title">Title</h5>#}
+{#                                <p class="p-text">Lorem ipsum dolor sit amet, elit ante eu nisl, sit euismod consectetuer</p>#}
+{##}
+{#                            </div>#}
+{#                              <div class="num-container">#}
+{#                                  <div class="number">5</div>#}
+{#                              </div>#}
+{#                          </div>#}
+{#                        </div>#}
+{##}
+{#                        <div class="card-cont">#}
+{#                          <div class="card text-center">#}
+{#                            <img class="manual-card-img" src="https://picsum.photos/1900/1080?image=327" alt="Card image cap">#}
+{#                            <div class="card-body" id="card">#}
+{#                                <h5 class="card-title">Title</h5>#}
+{#                                <p class="p-text">Lorem ipsum dolor sit amet, elit ante eu nisl, sit euismod consectetuer</p>#}
+{##}
+{#                            </div>#}
+{#                              <div class="num-container">#}
+{#                                  <div class="number">6</div>#}
+{#                              </div>#}
+{#                          </div>#}
+{#                        </div>#}
+{##}
+{#                      </div>#}
+{#                  </div>#}
+{##}
+{#              </div>#}
+{#            </div>#}
+{#        </div>#}
+{##}
+{#        <div id="video" class="small-container">#}
+{#            <iframe src="https://www.youtube.com/embed/McVxUs7d7ok" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>#}
+{#        </div>#}
+{##}
+{#    </div>#}
+{#</div>#}
+
+
+<div class="main-container2">
+    <div class="mission">Our mission is to help parents organise their children's belongings</div>
+    <div class="mission">See how to use the website:</div>
+    <div class="manual-cont">
+        <div class="flex-cont">
+            <div id="carousel">
+                <img src="{% static 'carousel/images/1.PNG' %}" alt="Image 1" />
+                <img src="{% static 'carousel/images/2.PNG' %}" alt="Image 2" />
+                <img src="{% static 'carousel/images/3.PNG' %}" alt="Image 3" />
+                <img src="{% static 'carousel/images/1.PNG' %}" alt="Image 1" />
+                <img src="{% static 'carousel/images/2.PNG' %}" alt="Image 2" />
+                <img src="{% static 'carousel/images/3.PNG' %}" alt="Image 3" />
+            </div>
+        </div>
+        <div class="flex-cont">
+            <div class="i-frame-btn">
+                {% if not user.is_authenticated %}
+                      <button id="get-started-input" type="button" class="btn">
+                          <a href="{% url 'login' %}">
+                            <span id="get-started-text">Get Started</span>
+                          </a>
+                      </button>
+                {% endif %}
+
+                <div id="video" class="small-container">
+                    <iframe src="https://www.youtube.com/embed/McVxUs7d7ok" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="{% static 'carousel/js/jquery.waterwheelCarousel.min.js' %}"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#carousel").waterwheelCarousel({
+      // include options like this:
+      // (use quotes only for string values, and no trailing comma after last option)
+      // option: value,
+      // option: value
+    });
+  });
+</script>
+
+{#<script>#}
+{##}
+{#    $("#more-usages").click(function() {#}
+{#        if ($(this).text() == "See more usages") {#}
+{#            $(this).text("See less");#}
+{#            $('html,body').animate({#}
+{#            scrollTop: $("#get-started").offset().top},#}
+{#            'slow');#}
+{#        } else {#}
+{#            $(this).text("See more usages");#}
+{#        }#}
+{#    });#}
+{##}
+{#</script>#}

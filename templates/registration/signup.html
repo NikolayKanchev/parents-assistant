@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'login_register/style.css' %}">
+
+{#    {% if not form.non_field_errors and not form.field.errors %}#}
+{#        <div style="height: 70px; border: 1px solid red;"></div>#}
+{#    {% endif %}#}
+{#    {% for message in messages %}#}
+{#        <div class="alert alert-danger" style="text-align: center">#}
+{#            <strong>{{ message }}</strong>#}
+{#        </div>#}
+{#    {% endfor %}#}
+    {% if form.errors %}
+        {% for field in form %}
+            {% for error in field.errors %}
+                <div class="alert alert-danger" style="text-align: center">
+                    <strong>{{ error|escape }}</strong>
+                </div>
+            {% endfor %}
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+            <div class="alert alert-danger" style="text-align: center">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="container-fluid">
+        <div id="cards-sign-up" class="row">
+            <div class="col-md-6 mt-5 single-card-sign-up">
+              <div class="card text-center">
+                <div class="card-body card_title">
+                    <div id="form-container">
+                        <h3 class="card-title">Sign up</h3>
+                        <hr>
+
+                        <form method="post" class="form">
+                            {% csrf_token %}
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                {{ form.email|as_crispy_field }}
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                {{ form.first_name|as_crispy_field }}
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                {{ form.last_name|as_crispy_field }}
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                {{ form.password1|as_crispy_field }}
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                {{ form.password2|as_crispy_field }}
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <button type="submit" class="btn btn-primary style" >Save</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+              </div>
+            </div>
+
+            <h4 id="or">OR</h4>
+
+            <div class="col-md-4 mt-5 single-card-sign-up">
+          <div class="card text-center">
+            <div class="card-body">
+
+                <h3 class="card-title">Sign up with</h3>
+                <hr class="social-hr">
+                <div class="card_title">
+                    <div id="form-container">
+                        <ul id="social-container-sign-up">
+                            <li>
+                                <a id="facebook" class="btn social-btn" href="{% url 'social:begin' 'facebook' %}">
+                                    <i class="fab fa-facebook-f"></i>
+                                    <span style="color: #eeeeee">Facebook</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="google" class="btn social-btn" href="{% url "social:begin" "google-plus" %}">
+                                    <img id="google-img" src="{% static 'images/new-google-favicon-512.png' %}">
+                                    <span style="color: gray; font-weight: 600">Google</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+          </div>
+        </div>
+
+        </div>
+            <div id="register-div">
+                <ul id="register-ul">
+                    <li id="li-register"><a id="register" href="{% url 'login' %}"><< Back to Login</a></li>
+                </ul>
+            </div>
+    </div>
+
+{% endblock %}

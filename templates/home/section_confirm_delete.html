@@ -1,0 +1,14 @@
+{% extends 'base_card.html' %}
+{% load bootstrap4 %}
+
+{% block title %}Delete Section{% endblock %}
+
+{% block card_content %}
+
+    <h2>Delete Section</h2>
+    <form method="post">
+        {% csrf_token %}
+        <p>Are you sure you want to delete the section: "{{ object.name }}" ?</p>
+        <input class="btn btn-danger" type="submit" value="Delete" />
+    </form>
+{% endblock %}

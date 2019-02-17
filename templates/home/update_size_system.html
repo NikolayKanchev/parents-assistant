@@ -1,0 +1,39 @@
+{% extends 'base_card.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% load crispy_forms_tags %}
+
+{% block card_title %} Edit {{ child.name }}'s Size System{% endblock %}
+
+{% block card_content %}
+
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12">
+
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div>{{ form.user }}</div>
+                <div>{{ form.name }}</div>
+                <div class="row">
+                  <div class="col-lg-10 col-md-10 col-sm-10 hidden">
+                    {{ form.size_system|as_crispy_field }}
+                  </div>
+                  <div class="col-lg-2 col-md-2 col-sm-2 form-actions" style="margin-top: 37px">
+                      <button type="submit" class="btn btn-primary" >Save</button>
+                  </div>
+
+                </div>
+            </form>
+            <br>
+
+            <div class="col-lg-11 col-md-11 col-sm-11"></div>
+
+
+        </div>
+
+      </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% load get_categories from my_filters %}
+{% load bootstrap4 %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'home/main-section.css' %}">
+
+{% if chosen_child.name != "Coming Soon" %}
+    {% if chosen_child.gender == "BOY" %}
+
+        <div class="section boy">
+            {% include 'others/section_update_delete_menu.html' %}
+
+            <div class="blue">
+                {% if s.name == "Clothes" %}
+                    <h3>{{ chosen_child.name }}'s Current Wardrobe</h3>
+                    {% include 'others/section-content.html' %}
+                {% else %}
+                    <h3 class="blue">{{ s.name }}</h3>
+                    {% include 'others/section-content.html' %}
+                {% endif %}
+            </div>
+        </div>
+
+    {% else %}
+
+        <div class="section girl">
+            {% include 'others/section_update_delete_menu.html' %}
+
+            <div class="pink">
+                {% if s.name == "Clothes" %}
+                    <h3>{{ chosen_child.name }}'s Current Wardrobe</h3>
+                    {% include 'others/section-content.html' %}
+                {% else %}
+                    <h3 class="pink">{{ s.name }}</h3>
+                    {% include 'others/section-content.html' %}
+                {% endif %}
+            </div>
+        </div>
+
+    {% endif %}
+{% else %}
+
+    <div class="section girl">
+        {% include 'others/section_update_delete_menu.html' %}
+
+        <div class="pink">
+            {% if s.name == "Clothes" %}
+                <h3>Wardrobe</h3>
+                {% include 'others/section-content.html' %}
+            {% else %}
+                <h3 class="pink">{{ s.name }}</h3>
+                {% include 'others/section-content.html' %}
+            {% endif %}
+        </div>
+    </div>
+
+{% endif %}

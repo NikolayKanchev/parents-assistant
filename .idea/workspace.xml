@@ -1,0 +1,921 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="37ddafbf-66fc-4696-af58-c9f8447ed831" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Django default" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Django default" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Django default" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="postgres: database" type="6d9b600a:PostgresImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Django default" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="postgres: database" type="6d9b600a:PostgresImplModel$Database" />
+        <item name="public: schema" type="a16502c0:PostgresImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Django default" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="postgres: database" type="6d9b600a:PostgresImplModel$Database" />
+        <item name="public: schema" type="a16502c0:PostgresImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/home/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="572">
+              <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/home/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+                <element signature="e#243#328#0" />
+                <element signature="e#346#872#0" />
+                <element signature="e#896#1745#0" />
+                <element signature="e#1768#2687#0" />
+                <element signature="e#1785#2077#0" />
+                <element signature="e#2096#2375#0" />
+                <element signature="e#2394#2679#0" />
+                <element signature="e#2706#3813#0" />
+                <element signature="e#2723#3058#0" />
+                <element signature="e#3076#3421#0" />
+                <element signature="e#3439#3805#0" />
+                <element signature="e#3891#3961#0" />
+                <element signature="e#4006#4047#0" />
+                <element signature="e#4118#4169#0" />
+                <element signature="e#5587#5717#0" />
+                <element signature="e#5756#5851#0" />
+                <element signature="e#5932#5980#0" />
+                <element signature="e#6037#8382#0" />
+                <element signature="e#8467#9426#0" />
+                <element signature="e#8505#9426#0" />
+                <element signature="e#8562#9057#0" />
+                <element signature="e#9092#9426#0" />
+                <element signature="e#9496#10736#0" />
+                <element signature="e#9545#10574#0" />
+                <element signature="e#9596#9703#0" />
+                <element signature="e#9769#9990#0" />
+                <element signature="e#10056#10277#0" />
+                <element signature="e#10290#10328#0" />
+                <element signature="e#10601#10736#0" />
+                <element signature="e#10742#10821#0" />
+                <element signature="e#11053#12043#0" />
+                <element signature="e#11096#11548#0" />
+                <element signature="e#11575#12043#0" />
+                <element signature="e#12061#12156#0" />
+                <element signature="e#12239#12283#0" />
+                <element signature="e#12337#14563#0" />
+                <element signature="e#14644#15438#0" />
+                <element signature="e#14679#15438#0" />
+                <element signature="e#14733#15152#0" />
+                <element signature="e#15187#15438#0" />
+                <element signature="e#15504#16896#0" />
+                <element signature="e#15558#16740#0" />
+                <element signature="e#15614#15827#0" />
+                <element signature="e#15898#16128#0" />
+                <element signature="e#16199#16429#0" />
+                <element signature="e#16442#16485#0" />
+                <element signature="e#16767#16896#0" />
+                <element signature="e#17109#17142#0" />
+                <element signature="e#17179#17907#0" />
+                <element signature="e#17366#17418#0" />
+                <element signature="e#17484#17907#0" />
+                <element signature="e#17492#17906#0" />
+                <element signature="e#17957#18876#0" />
+                <element signature="e#17974#18266#0" />
+                <element signature="e#18285#18564#0" />
+                <element signature="e#18583#18868#0" />
+                <element signature="e#18895#20017#0" />
+                <element signature="e#18912#19247#0" />
+                <element signature="e#19265#19610#0" />
+                <element signature="e#19628#20009#0" />
+                <element signature="e#20110#20184#0" />
+                <element signature="e#20258#20313#0" />
+                <element signature="e#20410#20495#0" />
+                <element signature="e#20706#20955#0" />
+                <element signature="e#22121#22214#0" />
+                <element signature="e#22267#22361#0" />
+                <element signature="e#22395#22699#0" />
+                <element signature="e#22638#22699#0" />
+                <element signature="e#22756#23675#0" />
+                <element signature="e#22773#23065#0" />
+                <element signature="e#23084#23363#0" />
+                <element signature="e#23382#23667#0" />
+                <element signature="e#23694#24816#0" />
+                <element signature="e#23711#24046#0" />
+                <element signature="e#24064#24409#0" />
+                <element signature="e#24427#24808#0" />
+                <element signature="e#25177#25479#0" />
+                <element signature="e#25283#25447#0" />
+                <element signature="e#25533#25836#0" />
+                <element signature="e#25640#25804#0" />
+                <element signature="e#25879#25942#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/home/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15730">
+              <caret line="736" selection-start-line="736" selection-end-line="736" />
+              <folding>
+                <element signature="e#0#78#0" expanded="true" />
+                <element signature="e#788#814#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="items_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/home/items_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="528">
+              <caret line="24" column="71" selection-start-line="24" selection-start-column="71" selection-end-line="24" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="items.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/home/static/home/css/items.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3674">
+              <caret line="167" column="22" selection-start-line="167" selection-start-column="22" selection-end-line="167" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="section.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/others/section.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1034">
+              <caret line="47" column="47" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="section-content.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/others/section-content.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="902">
+              <caret line="41" column="62" selection-start-line="41" selection-end-line="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="category_update_delete_menu.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/others/category_update_delete_menu.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="11" column="10" selection-start-line="3" selection-start-column="3" selection-end-line="11" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update_share.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/home/update_share.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2178">
+              <caret line="99" column="28" selection-start-line="99" selection-start-column="28" selection-end-line="99" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>new_ca</find>
+      <find>.blu</find>
+      <find>hr</find>
+      <find>items_list</find>
+      <find>#del</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/templates/registration/login.html" />
+        <option value="$PROJECT_DIR$/home/tests.py" />
+        <option value="$PROJECT_DIR$/accounts/views.py" />
+        <option value="$PROJECT_DIR$/home/static/base/base.js" />
+        <option value="$PROJECT_DIR$/home/static/home/update_child.css" />
+        <option value="$PROJECT_DIR$/home/apps.py" />
+        <option value="$PROJECT_DIR$/home/__init__.py" />
+        <option value="$PROJECT_DIR$/website/settings.py" />
+        <option value="$PROJECT_DIR$/website/urls.py" />
+        <option value="$PROJECT_DIR$/templates/user_manual/manual.html" />
+        <option value="$PROJECT_DIR$/home/static/manual.css" />
+        <option value="$PROJECT_DIR$/home/static/home/home.css" />
+        <option value="$PROJECT_DIR$/templates/others/sections.html" />
+        <option value="$PROJECT_DIR$/templates/home/new_chidren_main_section.html" />
+        <option value="$PROJECT_DIR$/home/static/home/new_main-section.css" />
+        <option value="$PROJECT_DIR$/templates/home/index.html" />
+        <option value="$PROJECT_DIR$/templates/others/dropdown_sections_menu.html" />
+        <option value="$PROJECT_DIR$/templates/others/chidren_sidenav.html" />
+        <option value="$PROJECT_DIR$/templates/others/dropdown_add_child.html" />
+        <option value="$PROJECT_DIR$/templates/home/update_child.html" />
+        <option value="$PROJECT_DIR$/home/static/home/share.js" />
+        <option value="$PROJECT_DIR$/templates/others/change_privileges.html" />
+        <option value="$PROJECT_DIR$/templates/others/dropdown.html" />
+        <option value="$PROJECT_DIR$/templates/base_card.html" />
+        <option value="$PROJECT_DIR$/accounts/static/login_register/style.css" />
+        <option value="$PROJECT_DIR$/templates/home/update_share.html" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/home/static/home/share.css" />
+        <option value="$PROJECT_DIR$/home/static/home/shared-with-me.css" />
+        <option value="$PROJECT_DIR$/templates/others/main-section-share-filter-sizes.html" />
+        <option value="$PROJECT_DIR$/home/templatetags/my_filters.py" />
+        <option value="$PROJECT_DIR$/templates/home/shared_with_me.html" />
+        <option value="$PROJECT_DIR$/templates/home/all_items_list.html" />
+        <option value="$PROJECT_DIR$/templates/home/delete_items.html" />
+        <option value="$PROJECT_DIR$/home/forms.py" />
+        <option value="$PROJECT_DIR$/templates/home/update_clothing_sizes_filter.html" />
+        <option value="$PROJECT_DIR$/templates/home/chidren_main_section.html" />
+        <option value="$PROJECT_DIR$/templates/others/section.html" />
+        <option value="$PROJECT_DIR$/templates/others/section_update_delete_menu.html" />
+        <option value="$PROJECT_DIR$/home/static/home/main-section.css" />
+        <option value="$PROJECT_DIR$/home/static/home/children-info.css" />
+        <option value="$PROJECT_DIR$/templates/others/chidren_info.html" />
+        <option value="$PROJECT_DIR$/templates/others/section-content.html" />
+        <option value="$PROJECT_DIR$/templates/others/main-section-filter-sizes.html" />
+        <option value="$PROJECT_DIR$/templates/others/main-section-shared-filter-sizes.html" />
+        <option value="$PROJECT_DIR$/templates/others/category_update_delete_menu.html" />
+        <option value="$PROJECT_DIR$/home/urls.py" />
+        <option value="$PROJECT_DIR$/home/views.py" />
+        <option value="$PROJECT_DIR$/templates/home/items_list.html" />
+        <option value="$PROJECT_DIR$/home/static/home/css/items.css" />
+        <option value="$PROJECT_DIR$/home/models.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1030" />
+    <option name="width" value="920" />
+    <option name="height" value="1050" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="DDL Data Source&#10;Sqlite (Xerial)" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\KEA\Projects\Third Year\website\templates\home" />
+      <recent name="D:\KEA\Projects\Third Year\website\templates\others" />
+      <recent name="D:\KEA\Projects\Third Year\website\home\static\home" />
+      <recent name="D:\KEA\Projects\Third Year\website\home" />
+      <recent name="D:\KEA\Projects\Third Year\website\home\static\carousel\images" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="website" type="Python.DjangoServer" factoryName="Django server">
+      <module name="website" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="website.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="37ddafbf-66fc-4696-af58-c9f8447ed831" name="Default" comment="" />
+      <created>1548023222185</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1548023222185</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="13" />
+      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" order="6" />
+      <window_info anchor="bottom" id="Run" order="9" visible="true" weight="0.2820513" />
+      <window_info anchor="bottom" id="Terminal" order="5" weight="0.32905984" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16778524" />
+      <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="2" weight="0.3295302" />
+      <window_info anchor="right" id="SciView" order="1" weight="0.3295302" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="7" />
+      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
+      <window_info anchor="bottom" id="Database Console" order="0" weight="0.32905984" />
+      <window_info anchor="bottom" id="Find" order="8" weight="0.32905984" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="1" weight="0.16174497" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="13" />
+      <window_info anchor="bottom" id="Run" order="9" visible="true" weight="0.2820513" />
+      <window_info anchor="bottom" id="Message" order="7" />
+      <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
+      <window_info anchor="right" id="Database" order="2" weight="0.3295302" />
+      <window_info anchor="bottom" id="Terminal" order="5" weight="0.32905984" />
+      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
+      <window_info anchor="right" id="SciView" order="1" weight="0.3295302" />
+      <window_info anchor="bottom" id="Database Console" order="0" weight="0.32905984" />
+      <window_info anchor="bottom" id="Find" order="8" weight="0.32905984" />
+      <window_info anchor="bottom" id="Python Console" order="6" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/templates/home/items_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" column="70" selection-start-line="20" selection-start-column="70" selection-end-line="20" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://316b3ce7-38d7-4afe-8095-d84d051415cd/database/postgres/schema/public/table/home_child_shared_with">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://316b3ce7-38d7-4afe-8095-d84d051415cd/database/postgres/schema/public/table/home_child_shared_with">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://316b3ce7-38d7-4afe-8095-d84d051415cd/database/postgres/schema/public/table/home_child_shared_with">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://316b3ce7-38d7-4afe-8095-d84d051415cd/database/postgres/schema/public/table/home_child_shared_with_edit">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://316b3ce7-38d7-4afe-8095-d84d051415cd/database/postgres/schema/public/table/home_child_shared_with_edit">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://316b3ce7-38d7-4afe-8095-d84d051415cd/database/postgres/schema/public/table/home_child_shared_with_edit">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://316b3ce7-38d7-4afe-8095-d84d051415cd/database/postgres/schema/public/table/home_child_shared_with">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://316b3ce7-38d7-4afe-8095-d84d051415cd/database/postgres/schema/public/table/home_sharedsizefilter">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://316b3ce7-38d7-4afe-8095-d84d051415cd/database/postgres/schema/public/table/home_child_shared_with_edit">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home/all_items_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="4" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="322" selection-start-line="322" selection-end-line="322" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home/delete_items.html" />
+    <entry file="das://316b3ce7-38d7-4afe-8095-d84d051415cd/database/postgres/schema/public/table/home_item">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home/update_clothing_sizes_filter.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1584">
+          <caret line="78" column="22" lean-forward="true" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="20" column="44" lean-forward="true" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://316b3ce7-38d7-4afe-8095-d84d051415cd/database/postgres/schema/public/table/home_sharedsizefilter">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://316b3ce7-38d7-4afe-8095-d84d051415cd/database/postgres/schema/public/table/home_sharedsizefilter">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://316b3ce7-38d7-4afe-8095-d84d051415cd/database/postgres/schema/public/table/home_sharedsizefilter">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://316b3ce7-38d7-4afe-8095-d84d051415cd/database/postgres/schema/public/table/home_sharedsizefilter">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://316b3ce7-38d7-4afe-8095-d84d051415cd/database/postgres/schema/public/table/home_sharedsizefilter">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://316b3ce7-38d7-4afe-8095-d84d051415cd/database/postgres/schema/public/table/home_sharedsizefilter">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://316b3ce7-38d7-4afe-8095-d84d051415cd/database/postgres/schema/public/table/home_sharedsizefilter">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://316b3ce7-38d7-4afe-8095-d84d051415cd/database/postgres/schema/public/table/home_sizefilter">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://316b3ce7-38d7-4afe-8095-d84d051415cd/database/postgres/schema/public/table/home_sharedsizefilter">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://316b3ce7-38d7-4afe-8095-d84d051415cd/database/postgres/schema/public/table/home_sharedsizefilter">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://316b3ce7-38d7-4afe-8095-d84d051415cd/database/postgres/schema/public/table/home_sharedsizefilter">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/templatetags/my_filters.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1226">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/static/home/children-sidenav.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="120" lean-forward="true" selection-start-line="110" selection-end-line="120" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/static/home/home.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="363" column="1" selection-start-line="363" selection-start-column="1" selection-end-line="363" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/static/others/dropdown.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="1" lean-forward="true" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home/chidren_main_section.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="25" column="193" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="193" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/others/section_update_delete_menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="27" lean-forward="true" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/static/home/main-section.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="362" column="26" lean-forward="true" selection-start-line="362" selection-start-column="26" selection-end-line="362" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/static/home/share.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="141" column="5" selection-start-line="141" selection-start-column="5" selection-end-line="141" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/static/home/children-info.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="363" column="13" lean-forward="true" selection-start-line="363" selection-start-column="13" selection-end-line="363" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/others/chidren_info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="170" column="39" lean-forward="true" selection-start-line="170" selection-start-column="39" selection-end-line="170" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/others/main-section-filter-sizes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="25" column="23" lean-forward="true" selection-start-line="21" selection-start-column="12" selection-end-line="25" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/others/main-section-shared-filter-sizes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home/shared_with_me.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-174">
+          <caret line="15" column="87" selection-start-line="15" selection-start-column="87" selection-end-line="15" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home/update_share.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2178">
+          <caret line="99" column="28" selection-start-line="99" selection-start-column="28" selection-end-line="99" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/others/section-content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="902">
+          <caret line="41" column="62" selection-start-line="41" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/others/category_update_delete_menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="10" selection-start-line="3" selection-start-column="3" selection-end-line="11" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/signals.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="10" column="62" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15730">
+          <caret line="736" selection-start-line="736" selection-end-line="736" />
+          <folding>
+            <element signature="e#0#78#0" expanded="true" />
+            <element signature="e#788#814#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/others/section.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1034">
+          <caret line="47" column="47" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home/items_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="24" column="71" selection-start-line="24" selection-start-column="71" selection-end-line="24" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/static/home/css/items.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3674">
+          <caret line="167" column="22" selection-start-line="167" selection-start-column="22" selection-end-line="167" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://316b3ce7-38d7-4afe-8095-d84d051415cd/database/postgres/schema/public/table/accounts_user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#243#328#0" />
+            <element signature="e#346#872#0" />
+            <element signature="e#896#1745#0" />
+            <element signature="e#1768#2687#0" />
+            <element signature="e#1785#2077#0" />
+            <element signature="e#2096#2375#0" />
+            <element signature="e#2394#2679#0" />
+            <element signature="e#2706#3813#0" />
+            <element signature="e#2723#3058#0" />
+            <element signature="e#3076#3421#0" />
+            <element signature="e#3439#3805#0" />
+            <element signature="e#3891#3961#0" />
+            <element signature="e#4006#4047#0" />
+            <element signature="e#4118#4169#0" />
+            <element signature="e#5587#5717#0" />
+            <element signature="e#5756#5851#0" />
+            <element signature="e#5932#5980#0" />
+            <element signature="e#6037#8382#0" />
+            <element signature="e#8467#9426#0" />
+            <element signature="e#8505#9426#0" />
+            <element signature="e#8562#9057#0" />
+            <element signature="e#9092#9426#0" />
+            <element signature="e#9496#10736#0" />
+            <element signature="e#9545#10574#0" />
+            <element signature="e#9596#9703#0" />
+            <element signature="e#9769#9990#0" />
+            <element signature="e#10056#10277#0" />
+            <element signature="e#10290#10328#0" />
+            <element signature="e#10601#10736#0" />
+            <element signature="e#10742#10821#0" />
+            <element signature="e#11053#12043#0" />
+            <element signature="e#11096#11548#0" />
+            <element signature="e#11575#12043#0" />
+            <element signature="e#12061#12156#0" />
+            <element signature="e#12239#12283#0" />
+            <element signature="e#12337#14563#0" />
+            <element signature="e#14644#15438#0" />
+            <element signature="e#14679#15438#0" />
+            <element signature="e#14733#15152#0" />
+            <element signature="e#15187#15438#0" />
+            <element signature="e#15504#16896#0" />
+            <element signature="e#15558#16740#0" />
+            <element signature="e#15614#15827#0" />
+            <element signature="e#15898#16128#0" />
+            <element signature="e#16199#16429#0" />
+            <element signature="e#16442#16485#0" />
+            <element signature="e#16767#16896#0" />
+            <element signature="e#17109#17142#0" />
+            <element signature="e#17179#17907#0" />
+            <element signature="e#17366#17418#0" />
+            <element signature="e#17484#17907#0" />
+            <element signature="e#17492#17906#0" />
+            <element signature="e#17957#18876#0" />
+            <element signature="e#17974#18266#0" />
+            <element signature="e#18285#18564#0" />
+            <element signature="e#18583#18868#0" />
+            <element signature="e#18895#20017#0" />
+            <element signature="e#18912#19247#0" />
+            <element signature="e#19265#19610#0" />
+            <element signature="e#19628#20009#0" />
+            <element signature="e#20110#20184#0" />
+            <element signature="e#20258#20313#0" />
+            <element signature="e#20410#20495#0" />
+            <element signature="e#20706#20955#0" />
+            <element signature="e#22121#22214#0" />
+            <element signature="e#22267#22361#0" />
+            <element signature="e#22395#22699#0" />
+            <element signature="e#22638#22699#0" />
+            <element signature="e#22756#23675#0" />
+            <element signature="e#22773#23065#0" />
+            <element signature="e#23084#23363#0" />
+            <element signature="e#23382#23667#0" />
+            <element signature="e#23694#24816#0" />
+            <element signature="e#23711#24046#0" />
+            <element signature="e#24064#24409#0" />
+            <element signature="e#24427#24808#0" />
+            <element signature="e#25177#25479#0" />
+            <element signature="e#25283#25447#0" />
+            <element signature="e#25533#25836#0" />
+            <element signature="e#25640#25804#0" />
+            <element signature="e#25879#25942#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

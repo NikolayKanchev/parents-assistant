@@ -1,0 +1,19 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'home/main-section.css' %}">
+
+<div class="commercial-cont">
+    {% if chosen_child %}
+        {% if chosen_child.gender == "BOY" %}
+            <div class="commercial-picture-cont boy">
+                <div id="pick"></div>
+                <a href="https://www.magazin.dk/" class="btn see-more"><span>See Details</span></a>
+            </div>
+        {% else %}
+            <div class="commercial-picture-cont girl">
+                <div id="pick"></div>
+                <a href="https://www.magazin.dk/" class="btn see-more"><span>See Details</span></a>
+            </div>
+        {% endif %}
+    {% endif %}
+</div>

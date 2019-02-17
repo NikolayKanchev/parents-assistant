@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load get_photos from my_filters %}
+
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home/shared-with-me.css' %}">
+
+    <div class="shared-cont">
+        <h4 class="title">Shared with me:</h4>
+        <hr class="hr">
+        <div class="children-cont">
+            {% if shared_with %}
+                {% for c in shared_with %}
+                  <div class="child-cont">
+                     <a id="child-link" href="{% url 'shared-home-view' pk=c.pk slug='read' %}" class="">
+        {#                    <img id="img-hearts" class="card-img-top" src="{% static 'images/hearts.png' %}" alt="hearts">#}
+                        <div class="crop-container">
+                            {% for photo in c|get_photos %}
+                                {% if photo.file %}
+                                    <img id='picture' class="card-img-top" src="{{ photo.file.url }}" alt="{{ photo.file }}'s picture">
+                                {% else %}
+                                    {% if c.gender == "BOY" %}
+                                        <img id='picture' class="card-img-top" src="{% static 'images/boy.png' %}" alt="{{ chosen_child_photo }}'s picture">
+                                    {% elif c.gender == "GIRL"%}
+                                            <img id='picture' class="card-img-top" src="{% static 'images/girl.png' %}" alt="{{ chosen_child_photo }}'s picture">
+                                    {% else %}
+                                        <img id='picture' style="padding: 10px" class="card-img-top" src="{% static 'images/Baby.png' %}" alt="{{ chosen_child_photo }}'s picture">
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="text name">{{ c.name }}</div>
+                    </a>
+                  </div>
+                {% endfor %}
+            {% endif %}
+
+            {% if shared_with_edit %}
+                {% for c in shared_with_edit %}
+                    <div class="child-cont">
+                        <a href="{% url 'shared-home-view' pk=c.pk slug='edit' %}" class="">
+        {#                    <img id="img-hearts" class="card-img-top" src="{% static 'images/hearts.png' %}" alt="hearts">#}
+                            <div class="crop-container">
+                                {% for photo in c|get_photos %}
+                                    {% if photo.file %}
+                                        <img id='picture' class="card-img-top" src="{{ photo.file.url }}" alt="{{ photo.file }}'s picture">
+                                    {% else %}
+                                        {% if c.gender == "BOY" %}
+                                            <img id='picture' class="card-img-top" src="{% static 'images/boy.png' %}" alt="{{ chosen_child_photo }}'s picture">
+                                        {% elif c.gender == "GIRL"%}
+                                                <img id='picture' class="card-img-top" src="{% static 'images/girl.png' %}" alt="{{ chosen_child_photo }}'s picture">
+                                        {% else %}
+                                            <img id='picture' style="padding: 10px" class="card-img-top" src="{% static 'images/Baby.png' %}" alt="{{ chosen_child_photo }}'s picture">
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <div class="text">{{ c.name }}</div>
+                        </a>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
+
+{% endblock %}
+

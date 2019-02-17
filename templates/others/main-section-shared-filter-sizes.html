@@ -1,0 +1,29 @@
+{% if s.name == 'Clothes' %}
+    {% if chosen_child.gender == "BOY" %}
+        <h6 class="pink filter-position">for sizes: <a href="{% url 'update_shared_clothing_filter_size' pk=size_filter.pk %}"><span class="sizes-text" data-toggle="tooltip" data-placement="top" title="Change sizes"> {{ size_filter.get_clothing_sizes }}</span></a></h6>
+    {% elif chosen_child.gender == "GIRL" %}
+        <h6 class="blue filter-position">for sizes: <a href="{% url 'update_shared_clothing_filter_size' pk=size_filter.pk %}"><span class="sizes-text" data-toggle="tooltip" data-placement="top" title="Change sizes"> {{ size_filter.get_clothing_sizes }}</span></a></h6>
+    {% else %}
+        <h6 class="blue filter-position">for sizes: <a href="{% url 'update_shared_clothing_filter_size' pk=size_filter.pk %}"><span class="sizes-text" data-toggle="tooltip" data-placement="top" title="Change sizes">
+            {% if size_filter.get_clothing_sizes %}
+                {{ size_filter.get_clothing_sizes }}
+            {% else %}
+                all
+            {% endif %}
+        </span></a></h6>
+    {% endif %}
+{% elif s.name == 'Shoes' %}
+    {% if chosen_child.gender == "BOY" %}
+        <h6 class="pink filter-position">of sizes: <a href="{% url 'update_shared_shoe_filter_size' pk=size_filter.pk %}"><span class="sizes-text" data-toggle="tooltip" data-placement="top" title="Change sizes"> {{ size_filter.get_shoe_sizes }}</span></a></h6>
+    {% elif chosen_child.gender == "GIRL" %}
+        <h6 class="pink filter-position">of sizes: <a href="{% url 'update_shared_shoe_filter_size' pk=size_filter.pk %}"><span class="sizes-text" data-toggle="tooltip" data-placement="top" title="Change sizes"> {{ size_filter.get_shoe_sizes }}</span></a></h6>
+    {% else %}
+        <h6 class="pink filter-position">of sizes: <a href="{% url 'update_shared_shoe_filter_size' pk=size_filter.pk %}"><span class="sizes-text" data-toggle="tooltip" data-placement="top" title="Change sizes">
+            {% if size_filter.get_shoe_sizes %}
+                {{ size_filter.get_shoe_sizes }}
+            {% else %}
+                all
+            {% endif %}
+        </span></a></h6>
+    {% endif %}
+{% endif %}

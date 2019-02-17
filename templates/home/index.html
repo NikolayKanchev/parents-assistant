@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'home/home.css' %}">
+
+    {% if not user.is_authenticated %}
+
+        {% include "user_manual/manual.html" %}
+
+    {% else %}
+
+        {% include 'others/chidren_info.html' %}
+
+        <div id="page-container">
+            <div id="main-page-container">
+                {% include 'home/chidren_main_section.html' %}
+            </div>
+            <div id="commercial-container">
+                {% include 'home/commercial_section.html' %}
+            </div>
+        </div>
+
+    {% endif %}
+
+{% endblock %}

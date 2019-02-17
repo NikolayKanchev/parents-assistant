@@ -1,0 +1,14 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'others/dropdown.css' %}">
+
+
+<div class="dropdown-menu tab-content">
+  <div class="tab-pane active" id="men">
+    <ul class="nav-list list-inline panel-group" id="accordion">
+        {% block dropdown_content %}
+
+        {% endblock %}
+
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+{% load static %}
+
+{% if category.name not in category.get_default_category_names %}
+   <div class="">
+      <a class="" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span id="icon-pink" class="add-item format-sizes hidden"><img data-toggle="tooltip" data-placement="top" title="Category settings" src="{% static '/open-iconic-master/svg/list-rich.svg' %}" class="ico" alt="icon-pink"></span>
+      </a>
+      <div class="dropdown-menu cat-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="{% url 'update_category' pk=category.pk %}">Change Name</a>
+        <a class="dropdown-item" href="{% url 'delete_category' pk=category.pk %}">Delete</a>
+      </div>
+    </div>
+{% endif %}

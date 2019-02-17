@@ -1,0 +1,277 @@
+.main-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.main-container2{
+    width: 100%;
+    height: 100%;
+    min-height: 653px;
+    background: -webkit-linear-gradient(to left, #3494e6, #ec6ead);
+    background: linear-gradient(to left, #3494e6, #ec6ead);
+}
+
+.manual-cont{
+    display: flex;
+    justify-content: space-around;
+}
+
+#carousel {
+    width:100vh;
+    height: 600px;
+    display: block;
+    position: relative;
+    padding-left: 0;
+}
+
+#carousel img {
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    display: none; /* hide images until carousel prepares them */
+    cursor: pointer; /* not needed if you wrap carousel items in links */
+}
+
+.mission{
+    font-size: 20px;
+    text-align: center;
+}
+
+.big-container{
+    width: 68%;
+}
+
+#big-cont{
+    height: auto;
+}
+
+#description{
+    width: 100%;
+    height: 80px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+#first-fluid{
+    padding: 13px;
+}
+
+#description p{
+    padding: 10px 50px;
+    text-align: justify;
+}
+
+#flow{
+    height: auto;
+    margin-bottom: 20px;
+    /*border: 1px solid red;*/
+}
+
+#video{
+    /*padding: 260px 40px;*/
+    /*height: 580px;*/
+    margin-bottom: 20px;
+}
+
+iframe{
+    width: 80vh;
+    height: 300px;
+}
+
+.card-container{
+    width: 50px;
+    height: 80px;
+}
+
+.num-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.number{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+    background-color: red;
+    margin-bottom: 0 !important;
+    color: #eeeeee;
+    font-weight: 700;
+}
+
+.cards-cont{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.card-cont{
+    width: 320px;
+}
+
+#get-started{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 40px 0 20px;
+}
+
+#get-started-input{
+    width: 200px;
+    height: 60px;
+    font-size: 30px;
+    background: transparent;
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+    margin-top: 80px;
+    margin-left: 190px;
+    margin-bottom: 120px;
+    /*position: absolute;*/
+    /*margin-top: -330px;*/
+    /*margin-left: 1250px;*/
+}
+
+.i-frame-btn{
+    display: block;
+    justify-content: center;
+}
+
+#get-started-input:hover{
+    background-color: #eeeeee;
+}
+
+#get-started-input:hover span{
+    color: #3494e6;
+}
+
+#get-started-text{
+    color: #eeeeee;
+}
+
+#get-started-input a:hover{
+    text-decoration: none;
+}
+
+#demo{
+    width: 100%;
+    padding: 0 !important;
+}
+
+.container-fluid{
+    margin: 0;
+}
+
+#more-usages{
+    width: 180px;
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid #ec6ead;
+    color: #ec6ead;
+}
+
+#more-usages:hover{
+    background-color: #ec6ead;
+    color: #eeeeee;
+    font-weight: 500;
+}
+
+.manual-card-img{
+    width: 100%;
+    height: auto;
+}
+
+.p-text{
+    height: 50px;
+    font-size: 14px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/***********************************************************************************/
+
+hr {
+    border-top: 1px solid #007bff;
+    width:70%;
+}
+
+a {color: #000;}
+
+
+.card{
+    background-color: #FFFFFF;
+    padding:0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius:4px;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+}
+
+
+.card:hover{
+    box-shadow: 0 16px 24px 2px rgba(0,0,0,0.02), 0 6px 30px 5px rgba(0,0,0,0.01), 0 8px 10px -5px rgba(0,0,0,0.3);
+    color:black;
+}
+
+address{
+  margin-bottom: 0;
+}
+
+#author a{
+  color: #fff;
+  text-decoration: none;
+
+}
+
+.flex-cont{
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+    iframe{
+        width: 280px;
+        height: auto;
+    }
+
+    #get-started-input{
+        margin-bottom: 30px;
+        margin-left: 6vh;
+    }
+
+    .i-frame-btn{
+        margin-top: -80px;
+    }
+
+    #carousel > img{
+        width: 300px;
+        height: auto;
+    }
+
+    #carousel{
+        height: 470px;
+        overflow: hidden;
+    }
+
+    .mission{
+        font-size: 14px;
+        font-weight: bolder;
+    }
+}
+
+
+@media screen and (max-width: 470px) {
+    .big-container{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1430px) {
+    .manual-cont {
+        display: block;
+    }
+}

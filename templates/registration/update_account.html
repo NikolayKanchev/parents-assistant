@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block content %}
+    {% include "others/tooltip_links.html" %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'login_register/style.css' %}">
+
+    <div class="container-fluid">
+        <div id="cards" class="row">
+            <div class="col-md-4 mt-5 single-card">
+              <div class="card text-center">
+                <div class="card-body card_title">
+                    <div id="form-container">
+                        <h3 class="card-title">Your Account Details</h3>
+                        <hr>
+                        <form method="post" class="form">
+                            <br>
+                            {% csrf_token %}
+                            {% bootstrap_form form layout='inline'%}
+                            <ul class="form-actions">
+                                <li><input id="submit" type="submit" value="Save" class="btn btn-primary" /></li>
+                            </ul>
+                        </form>
+                    </div>
+
+                </div>
+              </div>
+            </div>
+
+{#            <h4 id="or"></h4>#}
+
+            <div class="col-md-4 mt-5 single-card">
+          <div class="card text-center">
+            <div class="card-body">
+
+                <h3 class="card-title">Your children</h3>
+                <hr class="social-hr">
+                <div class="card_title">
+                    <ul id="kids-list">
+                        {% for child in children %}
+                            <li><a href="{% url 'update_child' pk=child.pk %}" data-toggle="tooltip" data-placement="left" title="Edit {{ child.name }}'s details!"><span id="child-name">{{ child.name }}</span><span id="pencil">....... <img src="{% static '/open-iconic-master/svg/pencil.svg' %}" class="icon" alt="pencil"></span></a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+            </div>
+          </div>
+        </div>
+
+        </div>
+            <div id="register-div">
+                <ul id="register-ul">
+                    <li id="li-register"><a id="register" href="{% url 'home' %}"><< Back to Home</a></li>
+                </ul>
+            </div>
+    </div>
+
+    <script src="{% static 'js/tooltip.js' %}"></script>
+
+{% endblock %}

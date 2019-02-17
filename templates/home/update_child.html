@@ -1,0 +1,71 @@
+{% extends 'base_card.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% load crispy_forms_tags %}
+
+{% block card_title %} Edit {{ child.name }}'s Details{% endblock %}
+
+{% block card_content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home/children-info.css' %}">
+
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-10">
+
+            <div class="crop-container-update-child">
+                {% if object.photo_set.first.file %}
+                    <img id='picture-update-child' class="card-img-top" src="{{ object.photo_set.first.file.url }}" alt="{{ chosen_child_photo }}'s picture">
+                {% else %}
+                    {% if form.instance.gender == "BOY" %}
+                        <img id='picture-update-child' class="card-img-top" src="{% static 'images/boy.png' %}" alt="{{ chosen_child_photo }}'s picture">
+                    {% else %}
+                        <img id='picture-update-child' class="card-img-top" src="{% static 'images/girl.png' %}" alt="{{ chosen_child_photo }}'s picture">
+                    {% endif %}
+                {% endif %}
+                <a class="photo-crop-link-update-child" href="{% url 'crop-photo' pk=object.photo_set.first.pk %}"><img src="{% static 'images/change_photo.png' %}" class="photo-update-child" alt="photo"></a>
+            </div>
+
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div>{{ form.user }}</div>
+                <div>{{ form.child_status }}</div>
+
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                    {{ form.name|as_crispy_field }}
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                    {{ form.date_of_birth|as_crispy_field }}
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                    {{ form.gender|as_crispy_field }}
+                  </div>
+{#                  <div class="col-lg-6 col-md-6 col-sm-6" >#}
+{#                     {{ form.picture|as_crispy_field }}#}
+{#                  </div>#}
+                  <div class="col-lg-10 col-md-10 col-sm-10 hidden">
+                    {{ form.size_system|as_crispy_field }}
+                  </div>
+                  <div class="col-lg-2 col-md-2 col-sm-2 form-actions">
+                      <button type="submit" class="btn btn-primary" >Save</button>
+                  </div>
+
+                </div>
+            </form>
+            <br>
+            <div class="col-lg-1 col-md-1 col-sm-1 ml-0" style="padding: 0">
+                <form action="{% url 'del_child' pk=child.id %}">
+                    {% csrf_token %}
+                    <button class="btn btn-danger" type="submit">Delete</button>
+                </form>
+            </div>
+            <div class="col-lg-11 col-md-11 col-sm-11"></div>
+
+
+        </div>
+
+      </div>
+    </div>
+
+{% endblock %}

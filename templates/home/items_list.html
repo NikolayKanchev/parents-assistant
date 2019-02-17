@@ -1,0 +1,278 @@
+{% extends 'base_item_card.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% load crispy_forms_tags %}
+
+{% block card_title %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/items.css' %}">
+
+    <div class="back-cont">
+    {% if not slug %}
+        <a class="back-btn" href="{% url 'home' pk=category.section.child.pk %}"><<< Back</a>
+        <div style="display: block">
+             <div class="dropdown">
+                <input type="button" class="btn move" data-toggle="dropdown" value="Move selected items">
+                <div class="dropdown-menu">
+                    <div class="dropdown-submenu">
+                        <a class="dropdown-item child" href="#" data-toggle="dropdown-submenu">To another child</a>
+                        <div class="dropdown-menu">
+                            <div class="choose-child">Choose a child:</div>
+                            <form id="toAnotherChild" class="center">
+                                {% for child in children %}
+                                    {% if child.pk != chosen_child.pk %}
+                                        <label for="child-option"></label>
+                                        <input id="child-option" type="radio" name="radioName" value="{{ child.pk }}" /> {{ child.name }} <br />
+                                    {% endif %}
+                                {% endfor %}
+                            </form>
+                        </div>
+                    </div>
+                    <div class="dropdown-submenu">
+                        <a class="dropdown-item storage" href="#" data-toggle="dropdown-submenu">To storage</a>
+                        <div class="dropdown-menu">
+                          pppp
+
+                        </div>
+                    </div>
+                    <div class="dropdown-submenu">
+                        <a class="dropdown-item loan" href="#" data-toggle="dropdown-submenu">To given as loan</a>
+                        <div class="dropdown-menu">
+                          ppppppppppp
+
+                        </div>
+                    </div>
+                </div>
+             </div>
+             <input id="del" type="button" class="btn" value="Delete selected items">
+        </div>
+    {% else %}
+        <a class="back-btn" href="{% url 'shared-home-view' pk=category.section.child.pk slug=slug %}"><<< Back</a>
+        {% if slug == 'edit' %}
+            <div style="display: block">
+                 <div class="dropdown">
+                    <input type="button" class="btn move" data-toggle="dropdown" value="Move selected items">
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                    </div>
+                 </div>
+                 <input id="del" type="button" class="btn" value="Delete selected items">
+            </div>
+
+        {% endif %}
+    {% endif %}
+    </div>
+    <h2 class="blue"> Items in "{{ category.name }}"</h2>
+    <h6 class="pink filter-position">
+        {% if not slug %}
+            {% if category.section.name == "Clothes" %}
+              for sizes:
+              <a href="{% url 'update_clothing_filter_size' pk=size_filter.pk category_pk=category.pk %}">
+                  <span class="sizes-text" data-toggle="tooltip" data-placement="top" title="Change sizes"> {{ size_filter.get_clothing_sizes }}</span>
+              </a>
+            {% elif category.section.name == "Shoes" %}
+              for sizes:
+              <a href="{% url 'update_shoe_filter_size' pk=size_filter.pk category_pk=category.pk %}">
+                  <span class="sizes-text" data-toggle="tooltip" data-placement="top" title="Change sizes"> {{ size_filter.get_shoe_sizes }}</span>
+              </a>
+            {% endif %}
+        {% else %}
+            {% if category.section.name == "Clothes" %}
+              for sizes:
+              <a href="{% url 'update_shared_clothing_filter_size' pk=size_filter.pk category_pk=category.pk %}">
+                  <span class="sizes-text" data-toggle="tooltip" data-placement="top" title="Change sizes"> {{ size_filter.get_clothing_sizes }}</span>
+              </a>
+            {% elif category.section.name == "Shoes" %}
+              for sizes:
+              <a href="{% url 'update_shared_shoe_filter_size' pk=size_filter.pk category_pk=category.pk%}">
+                  <span class="sizes-text" data-toggle="tooltip" data-placement="top" title="Change sizes"> {{ size_filter.get_shoe_sizes }}</span>
+              </a>
+            {% endif %}
+        {% endif %}
+
+    </h6>
+    <hr>
+{% endblock %}
+
+{% block card_content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/items.css' %}">
+
+
+    <div class="items-cont">
+        {% for i in items %}
+            <form>
+                <div class="multiselect">
+                    <div id="checkboxes">
+                      <label for="{{ i.pk }}">
+                          <div class="item-card-cont">
+                            {% if slug != 'read' %}
+                                <div class="details-cont">
+                                    <a class="btn details-btn" href="{% url 'update_item' pk=i.pk %}">Details</a>
+                                </div>
+                            {% endif %}
+                            <div class="img-container">
+                                <img class="card-img-top" src="{{ i.picture.url }}" alt="picture">
+                            </div>
+                            {% if i.brand %}
+                                <div class="text-size">
+                                    <span class="blue">Brand: </span><span class="pink"> {{ i.brand }} </span>
+                                </div>
+                            {% endif %}
+                            {% if i.season %}
+                                <div class="text-size">
+                                    <span class="blue">Season: </span><span class="pink"> {{ i.season }} </span>
+                                </div>
+                            {% endif %}
+                            {% if i.clothing_size or i.sex %}
+                                <div class="text-size">
+                                {% if i.clothing_size %}
+                                    <span class="blue">Size: </span><span class="pink"> {{ i.get_clothing_size }} </span>
+                                    <span class="pink"></span>
+                                    <span class="pink"></span>
+                                {% endif %}
+                                {% if i.shoe_size %}
+                                    <div class="text-size"><span class="blue">Size: </span><span class="pink"> {{ i.get_shoe_size }} </span></div>
+                                {% endif %}
+                                {% if i.sex %}
+                                    <span class="blue">Sex: </span><span class="pink"> {{ i.sex }} </span>
+                                {% endif %}
+                                </div>
+                            {% endif %}
+                            {% if i.condition %}
+                                <div class="text-size"><span class="blue">Condition: </span><span class="pink"> {{ i.condition }} </span></div>
+                            {% endif %}
+                        </div>
+                          <input type="checkbox" id="{{ i.pk }}" />
+
+                      </label>
+                    </div>
+                </div>
+            </form>
+        {% endfor %}
+
+        <div class="item-card-cont hidden"></div>
+        <div class="item-card-cont hidden"></div>
+        <div class="item-card-cont hidden"></div>
+        <div class="item-card-cont hidden"></div>
+        <div class="item-card-cont hidden"></div>
+        <div class="item-card-cont hidden"></div>
+        <div class="item-card-cont hidden"></div>
+    </div>
+
+    <script>
+        $( document ).ready(function() {
+            $('.dropdown-submenu a.loan').on("click", function(e){
+                $(this).next('div').toggle();
+                $('.dropdown-submenu a.child').next('div').hide();
+                $('.dropdown-submenu a.storage').next('div').hide();
+                e.stopPropagation();
+                e.preventDefault();
+              });
+
+            $('.dropdown-submenu a.child').on("click", function(e){
+                $(this).next('div').toggle();
+                $('.dropdown-submenu a.loan').next('div').hide();
+                $('.dropdown-submenu a.storage').next('div').hide();
+                e.stopPropagation();
+                e.preventDefault();
+              });
+
+            $('.dropdown-submenu a.storage').on("click", function(e){
+                $(this).next('div').toggle();
+                $('.dropdown-submenu a.child').next('div').hide();
+                $('.dropdown-submenu a.loan').next('div').hide();
+                e.stopPropagation();
+                e.preventDefault();
+              });
+
+
+            $('.multiselect input').click(function () {
+               let selectedItems = [];
+               $('.multiselect input:checked').each(function (i, obj) {
+                    selectedItems[i]= obj.id
+                });
+                if (selectedItems.length === 0){
+                    $('#del').css("visibility", "hidden");
+                    $('.move').css("visibility", "hidden");
+                }else{
+                    $('#del').css("visibility", "inherit");
+                    $('.move').css("visibility", "inherit");
+                }
+            });
+
+            $('#del').click(function () {
+                let selectedItems = [];
+                $('.multiselect input:checked').each(function (i, obj) {
+                    selectedItems[i]= obj.id
+                });
+                if (selectedItems.length !== 0){
+
+                    if (confirm("Are you sure, that you want to delete the selected items?")){
+
+                        let data = {
+                            items: selectedItems.toString()
+                        };
+                        $.ajax({
+                            url: '{% url 'delete_items' %}',
+                            data: data,
+                            dataType: 'json',
+                            success: function (data) {
+                                if (data.success){
+                                    window.location.reload();
+                                }
+                            }
+                        });
+                    }
+                }
+
+            });
+
+
+            {#$('#move').click(function () {#}
+            {#    let selectedItems = [];#}
+            {#    $('.multiselect input:checked').each(function (i, obj) {#}
+            {#        selectedItems[i]= obj.id#}
+            {#    });#}
+                {#alert(selectedItems);#}
+            {# });#}
+
+
+            $('#toAnotherChild input').on('change', function() {
+                let selectedItems = [];
+                $('.multiselect input:checked').each(function (i, obj) {
+                    selectedItems[i]= obj.id
+                });
+                if (selectedItems.length !== 0){
+
+                    let toChild = $('input[name=radioName]:checked', '#toAnotherChild').val();
+
+                    if (confirm("Are you sure, that you want to move the selected items ?")){
+
+                        let data = {
+                            items: selectedItems.toString(),
+                            toChild: toChild,
+                        };
+
+                        $.ajax({
+                            url: '{% url 'move_items_to_another_child' %}',
+                            data: data,
+                            dataType: 'json',
+                            success: function (data) {
+                                if (data.success){
+                                    window.location.reload();
+                                }
+                            }
+                         });
+                     }
+                }
+
+            });
+
+        });
+    </script>
+
+{% endblock %}

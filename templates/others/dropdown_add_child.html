@@ -1,0 +1,13 @@
+{% extends 'others/dropdown.html' %}
+{% load static %}
+
+{% block dropdown_content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'others/dropdown.css' %}">
+        <br>
+
+        <li><a href="{% url 'add_child' %}">Baby and Child</a></li>
+        <li><a href="{% url 'add_preemie' %}">Preemie</a></li>
+        <li><a href="{% url 'add_not_born' %}">Not Born Yet</a></li>
+
+
+{% endblock %}

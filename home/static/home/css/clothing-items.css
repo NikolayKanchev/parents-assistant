@@ -1,0 +1,35 @@
+.container-fluid{
+    padding-top: 0;
+}
+
+.position{
+    margin-top: 37px;
+    margin-right: 0;
+}
+
+.style{
+    margin-left: 50px;
+    width: 80px;
+}
+
+hr{
+    margin-left: -15px;
+}
+
+.optional{
+    background-color: #f5f5f5;
+}
+
+.optional-title{
+    color: #cccccc;
+    text-align: center;
+    width: 100%;
+}
+
+@media screen and (max-width: 1100px) {
+    .style{
+        margin-left: 0;
+    }
+}
+
+

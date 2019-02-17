@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>{% block title %}{% endblock %}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+{#        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">#}
+{#        <link href="{% static 'css/cropper.min.css' %}" rel="stylesheet">#}
+
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'base/new_base.css' %}">
+
+	<body class="is-preload">
+        <div id="wrapper">
+
+            <div class="demo">
+                <div class="big-container">
+                    <div class="row">
+                        <div class="" style="width: 100%">
+                            <div class="navbar">
+
+                                <div id="logo">
+                                    <a href="{% url 'home' %}" style=""><img src="{% static 'images/pa.png' %}"/></a>
+                                </div>
+
+                                {% if user.is_authenticated %}
+                                    <div id="horizontal-menu">
+                                        {% if chosen_child %}
+                                            <a>Shopping list</a>
+                                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Transfer<span class="caret"></span></a>
+                                            {% include "others/dropdown_transfer.html" %}
+                                        {% endif %}
+
+                                    </div>
+                                {% else %}
+                                    <div id="horizontal-menu">
+
+
+                                    </div>
+                                {% endif %}
+
+                                <div id="main-menu">
+                                    <nav class="menu" style="height: 949px;">
+                                        <div class="nav-layer" style="width: 4283.46px; height: 4283.46px; margin-top: -2141.73px; margin-left: -2141.73px;"></div>
+                                        {% if not user.is_authenticated %}
+                                            <ul>
+                                                <li><a href="{% url 'home' %}">Home</a></li>
+                                                <li><a href="{% url 'signup' %}">Get Started</a></li>
+                                                <li><a href="{% url 'login' %}">Log in</a></li>
+                                            </ul>
+                                        {% else %}
+                                            <ul>
+                                                <li><a href="{% url 'home' %}">Home</a></li>
+                                                <li><a href="{% url 'manual' %}">User Manual</a></li>
+                                                <li><a href="{% url 'acc-update' user.pk %}">Your Account</a></li>
+
+                                                <li class="more-menu-items"><a href="{% url 'manual' %}">Shopping List</a></li>
+                                                <li class="more-menu-items"><a href="{% url 'manual' %}">Transfer</a></li>
+                                                <li class="more-menu-items"><a href="{% url 'shared_with_me' %}">Shared with me</a></li>
+
+                                                <li><a href="{% url 'logout' %}">Log Out</a></li>
+                                            </ul>
+                                        {% endif %}
+                                    </nav>
+                                    <a class="nav-toggle">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content">
+                {% block content %}
+
+                {% endblock %}
+            </div>
+
+        </div>
+
+        <script src="{% static 'base/base.js' %}"></script>
+        <script src="{% static 'js/jquery.nicescroll.js' %}"></script>
+
+        <script type="text/javascript">
+            $("body").niceScroll();
+        </script>
+	</body>
+</html>

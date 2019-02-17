@@ -1,0 +1,140 @@
+.dropdown-menu{
+    width: 100%;
+    height: auto;
+    border: 1px solid #ec6ead;
+}
+
+.nav-tabs {
+  display: inline-block;
+  border-bottom: none;
+  padding-top: 15px;
+  font-weight: bold;
+}
+.nav-tabs > li > a,
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus,
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  border: none;
+  border-radius: 0;
+}
+
+.nav-list {
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+}
+.nav-list > li {
+  padding: 20px 15px 15px;
+  border-left: 1px solid #eee;
+  width: 33.333%;
+  text-align: center;
+}
+.nav-list > li:last-child { border-right: 1px solid #eee; }
+.nav-list > li > a:hover span{ text-decoration: none; color: #ec6ead;}
+.nav-list > li > a > span {
+  display: block;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.nav-list > li > a span{
+    color: #3494e6;
+}
+
+.mega-dropdown {
+    position: static !important;
+}
+
+
+.mega-dropdown-menu {
+  padding: 20px 15px 15px;
+  text-align: center;
+  width: 100%;
+}
+
+.crop-container-dropdown{
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+    margin-left: 25px;
+}
+
+#picture-dropdown{
+    width: 110px;
+    height: auto;
+    /*margin: 0 0 0 -25px;*/
+}
+
+#img-hearts-dropdown{
+    width: 60px;
+    padding-left: 20px;
+    padding-top: 5px;
+    position: absolute;
+}
+
+#dropdown-child{
+    width: 150px;display: block;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#small-sidenav-menu{
+    width: auto;
+    margin-left: -220px;
+}
+
+@media screen and (max-width: 760px){
+
+    .nav-list > li:hover span{
+        color: #ec6ead;
+    }
+    .dropdown-menu{
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .dropdown-menu{
+        height: auto;
+    }
+
+    .nav-list > li {
+      border: none;
+      border-bottom: 1px solid #eee;
+      width: 250px;
+      text-align: center;
+    }
+
+    .nav-list > li:last-child {
+        border-right: none;
+    }
+
+    .nav-list{
+        display: block;
+        margin-left: 17%;
+        border-bottom: none;
+    }
+}
+
+#toggle-add-child{
+    position: relative;
+    margin-left: 5px;
+}
+
+#c{
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 450px){
+    #small-sidenav-menu{
+        width: 380px;
+        margin-left: -330px;
+        /*height: 580px;*/
+    }
+}

@@ -1,0 +1,65 @@
+{% load get_num_items from my_filters %}
+{% load get_shared_child_num_items from my_filters %}
+{% load get_categories from my_filters %}
+{% load bootstrap4 %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'home/main-section.css' %}">
+
+{% if not shared_child %}
+    {% include 'others/main-section-filter-sizes.html' %}
+{% else %}
+    {% include 'others/main-section-shared-filter-sizes.html' %}
+{% endif %}
+
+<hr class="hr-section-name">
+<div class="categories">
+    <div class="cat-cont">
+    {% for category in s|get_categories %}
+
+            <H6 class="cat-row">
+                {% if not shared_child %}
+                    <a href="{% url 'items_list' pk=category.id %}">
+                {% else %}
+                    <a href="{% url 'items_list' pk=category.id slug=slug %}">
+                {% endif %}
+                    <span class="pink cat-name">{{ category.name }}</span>
+                </a>
+                <span class="cat-rest-cont">
+                {% if not slug or slug == 'edit' %}
+                    {% if s.name == 'Clothes' %}
+                        <span class="add-item format-sizes sm-width hidden"><a href="{% url 'add_items' pk=category.pk %}"><span id=""><img data-toggle="tooltip" data-placement="top" title="Add Items" src="{% static '/open-iconic-master/svg/plus.svg' %}" class="ico" alt="plus"></span></a></span>
+{#                        <span class="delete-item format-sizes sm-width hidden"><a href="{% url 'delete_items' pk=category.pk %}"><span id=""><img data-toggle="tooltip" data-placement="top" title="Delete Items" src="{% static '/open-iconic-master/svg/trash.svg' %}" class="ico" alt="trash"></span></a></span>#}
+                        <span class="add-item format-sizes hidden"><a href="{% url 'add_items' pk=category.pk %}"><span id=""><img data-toggle="tooltip" data-placement="top" title="Needs more" src="{% static '/open-iconic-master/svg/list.svg' %}" class="ico" alt="trash"></span></a></span>
+                       {% include 'others/category_update_delete_menu.html' %}
+                    {% elif s.name == 'Shoes' %}
+                        <span class="add-item format-sizes sm-width hidden"><a href="{% url 'add_items' pk=category.pk %}"><span id=""><img data-toggle="tooltip" data-placement="top" title="Add Items" src="{% static '/open-iconic-master/svg/plus.svg' %}" class="ico" alt="plus"></span></a></span>
+{#                        <span class="delete-item format-sizes sm-width hidden"><a href="{% url 'delete_items' pk=category.pk %}"><span id=""><img data-toggle="tooltip" data-placement="top" title="Delete Items" src="{% static '/open-iconic-master/svg/trash.svg' %}" class="ico" alt="trash"></span></a></span>#}
+                        <span class="add-item format-sizes hidden"><a href="{% url 'add_items' pk=category.pk %}"><span id=""><img data-toggle="tooltip" data-placement="top" title="Needs more" src="{% static '/open-iconic-master/svg/list.svg' %}" class="ico" alt="trash"></span></a></span>
+                        {% include 'others/category_update_delete_menu.html' %}
+                    {% else %}
+                         <span class="add-item format-sizes sm-width hidden"><a href="{% url 'add_items' pk=category.pk %}"><span id=""><img data-toggle="tooltip" data-placement="top" title="Add Items" src="{% static '/open-iconic-master/svg/plus.svg' %}" class="ico" alt="plus"></span></a></span>
+{#                        <span class="delete-item format-sizes sm-width hidden"><a href="{% url 'delete_items' pk=category.pk %}"><span id=""><img data-toggle="tooltip" data-placement="top" title="Delete Items" src="{% static '/open-iconic-master/svg/trash.svg' %}" class="ico" alt="trash"></span></a></span>#}
+                        <span class="add-item format-sizes hidden"><a href="{% url 'add_items' pk=category.pk %}"><span id=""><img data-toggle="tooltip" data-placement="top" title="Needs more" src="{% static '/open-iconic-master/svg/list.svg' %}" class="ico" alt="trash"></span></a></span>
+                        {% include 'others/category_update_delete_menu.html' %}
+                    {% endif %}
+                {% else %}
+                    <span style="width: 50px"></span>
+                {% endif %}
+
+                    {% if not shared_child %}
+                        <span class="total blue">{{ category|get_num_items }}</span>
+                    {% else %}
+                        <span class="total blue">
+                            {% get_shared_child_num_items category user.pk %}
+                        </span>
+                    {% endif %}
+                </span>
+            </H6>
+
+    {% endfor %}
+
+        {% if slug != 'read' %}
+            <a class="add-new-category" href="{% url 'add_category' pk=s.pk %}"><H6 class="cat-row b"> Add new category </H6></a>
+        {% endif %}
+    </div>
+</div>
